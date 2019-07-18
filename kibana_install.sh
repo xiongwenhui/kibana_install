@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #下载kibana
-wget --no-check-certificate https://artifacts.elastic.co/downloads/kibana/kibana-6.8.1-linux-x86_64.tar.gz
-tar -xzf kibana-6.8.1-linux-x86_64.tar.gz
-mv kibana-6.8.1-linux-x86_64 /usr/local/kibana
+wget --no-check-certificate https://artifacts.elastic.co/downloads/kibana/kibana-6.6.1-linux-x86_64.tar.gz
+tar -xzf kibana-6.6.1-linux-x86_64.tar.gz
+mv kibana-6.6.1-linux-x86_64 /usr/local/kibana
 cd /usr/local/kibana/
 
 #安装sentinl
@@ -15,7 +15,7 @@ ip=$(/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v 172.17.0.1|grep -v in
 sed -i "s/localhost/$ip/g" /usr/local/kibana/config/kibana.yml
 
 #开机启动
-mv /home/kibana_install-master/es /etc/init.d
+mv /home/kibana_install-master/kibana /etc/init.d
 cd /etc/init.d
 chmod +x kibana
 chkconfig --add kibana
