@@ -1,0 +1,29 @@
+#!/bin/sh
+#chkconfig: 2345 80 05
+#description: kibana
+
+case "$1" in
+start)
+    cd /usr/local/kibana/bin
+    nohup ./kibana > /nohub.out &
+    echo "kibana startup"
+    ;;  
+stop)
+    kibana_pid=`ps aux|grep node | grep -v 'grep node' | awk '{print $2}'`
+    kill -9 $kibana_pid
+    echo "kibana stopped"
+    ;;  
+restart)
+    kibana_pid=`ps aux|grep node | grep -v 'grep node' | awk '{print $2}'`
+    kill -9 $kibana_pid
+    echo "kibana stopped"
+    cd /usr/local/kibana/bin
+    nohup ./kibana > /nohub.out &
+    echo "kibana startup"
+    ;;  
+*)
+    echo "start|stop|restart"
+    ;;  
+esac
+
+exit $?

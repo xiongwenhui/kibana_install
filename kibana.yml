@@ -1,0 +1,16 @@
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.url: "http://localhost:9200"
+elasticsearch.username: "kibana"
+elasticsearch.password: "XkKtmzuyEyMp4KfljLny"
+sentinl:
+ settings:
+    email:
+      active: true
+      user: "15079280867@163.com"
+      password: "123456mail"
+      host: smtp.163.com
+      ssl: false
+      timeout: 100000
+    report:
+      active: true
