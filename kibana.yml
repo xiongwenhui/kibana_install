@@ -5,6 +5,10 @@ elasticsearch.username: "kibana"
 elasticsearch.password: "XkKtmzuyEyMp4KfljLny"
 sentinl:
  settings:
+    authentication:
+      enabled: true
+      username: "elastic"
+      password: "XBg7TaJntHWINmiCtath"
     email:
       active: true
       user: "15079280867@163.com"
