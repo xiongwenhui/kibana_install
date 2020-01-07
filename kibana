@@ -5,7 +5,7 @@
 case "$1" in
 start)
     cd /usr/local/kibana/bin
-    nohup ./kibana > /nohub.out &
+    nohup ./kibana --allow-root > /nohub.out &
     echo "kibana startup"
     ;;  
 stop)
@@ -18,7 +18,7 @@ restart)
     kill -9 $kibana_pid
     echo "kibana stopped"
     cd /usr/local/kibana/bin
-    nohup ./kibana > /nohub.out &
+    nohup ./kibana --allow-root > /nohub.out &
     echo "kibana startup"
     ;;  
 *)
